@@ -36,7 +36,7 @@ class FaceForensicsDataset(data.Dataset):
     }
 
     # frames = {'test': 100, 'eval': 100, 'train': 270}
-    frames = {'test': 25, 'eval': 10, 'train': 270}
+    frames = {'test': 10, 'eval': 10, 'train': 10}
 
     def __init__(self, dataset='FF-DF', mode='test', res=256, train=True,
                  sample_num=None):
