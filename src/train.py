@@ -191,7 +191,7 @@ def train_epoch(gpu, model, train_data_loader, epoch, cur_acc,
         losses.append(loss.cpu().detach().numpy())
         acces.append(get_accracy(cls_score, label),)
 
-        if iteration % 500 == 0 and gpu == 0:
+        if iteration % 100 == 0 and gpu == 0:
             info = "[{}/{}]\n".format(iteration, len(train_data_loader))
             avg_loss = np.mean(np.array(losses))
             info += "\tLoss Cls:{:.4f}\n".format(avg_loss)
@@ -262,9 +262,9 @@ def train(gpu,args):
                                                     sampler=train_sampler)
     TESTLIST = {
         'FF-DF': "non-input",
-        'FF-NT': "non-input",
-        'FF-FS': "non-input",
-        'FF-F2F': "non-input",
+        #'FF-NT': "non-input",
+        #'FF-FS': "non-input",
+        #'FF-F2F': "non-input",
     }
 
     def get_data_loader(name):
